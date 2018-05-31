@@ -13,19 +13,19 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace Glazer
 {
     public sealed partial class MainPage : Page
     {
-
+        double tempQuantity = 1;
         List<string> tintArray = new List<string>();
 
         public MainPage()
         {
             this.InitializeComponent();
 
+            tintArray.Add("None");
             tintArray.Add("Black");
             tintArray.Add("Brown");
             tintArray.Add("Blue");
@@ -40,10 +40,11 @@ namespace Glazer
         {
             if(glassHeight.Text == "" || glassWidth.Text == "" || woodHeight.Text == "" || woodWidth.Text == "")
             {
-                //error
+                ErrorBlock.Text = "ERROR: Every field must have a number to calculate";
             }
             else
             {
+                ErrorBlock.Text = "";
                 compute();
             }
         }
@@ -67,6 +68,15 @@ namespace Glazer
             LengthSolution.Text = wLength.ToString();
             TintChoice.Text = tint.ToString();
             Date.Text = today;
+            QuantityChoice.Text = tempQuantity.ToString();
+
+        }
+
+        private void Quantity_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            var slider = sender as Slider;
+            tempQuantity = slider.Value;
+            QuantitySelected.Text = tempQuantity.ToString();
 
         }
     }
