@@ -9,6 +9,32 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <TextBlock HorizontalAlignment="Center" Margin="0,35,0,0" Text="Glazer Calculator" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,87,0,0" Text="Glass Height in Feet:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.756,1.883"/>
+        <TextBox x:Name="glassHeight" HorizontalAlignment="Left" Margin="199,81,0,0" Text="" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="49,133,0,0" Text="Glass Width in Feet:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="glassWidth" HorizontalAlignment="Left" Margin="199,127,0,0" Text="" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="39,178,0,0" Text="Wood Height in Feet:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="woodHeight" HorizontalAlignment="Left" Margin="199,172,0,0" Text="" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="43,224,0,0" Text="Wood Width in Feet:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="woodWidth" HorizontalAlignment="Left" Margin="199,218,0,0" Text="" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="111,283,0,0" Text="Tint Color:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox x:Name="TintBox" HorizontalAlignment="Left" Margin="199,277,0,0" VerticalAlignment="Top" Width="124"/>
+        <Slider x:Name="Quantity" HorizontalAlignment="Left" Margin="111,352,0,0" VerticalAlignment="Top" Width="191"/>
+        <TextBlock HorizontalAlignment="Left" Margin="108,332,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="278,332,0,0" Text="100" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="31,358,0,0" Text="Quantity:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button Content="Calculate" HorizontalAlignment="Center" Margin="0,401,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="42,450,0,0" Text="Area of Glass in Feet:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,475,0,0" Text="Length of Wood in Feet:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="152,500,0,0" Text="Tint:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,525,0,0" Text="Quantity:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="AreaSolution" HorizontalAlignment="Left" Margin="208,450,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="LengthSolution" HorizontalAlignment="Left" Margin="208,475,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TintChoice" HorizontalAlignment="Left" Margin="208,500,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="QuantityChoice" HorizontalAlignment="Left" Margin="208,525,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="85,550,0,0" Text="Date Ordered:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Date" HorizontalAlignment="Left" Margin="208,550,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="631,407,0,0" Text="ErrorBlock" TextWrapping="Wrap" VerticalAlignment="Top" IsColorFontEnabled="True" Foreground="#dd1818"/>
     </Grid>
 </Page>

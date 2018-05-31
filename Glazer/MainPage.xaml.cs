@@ -17,14 +17,57 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Glazer
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
+
+        List<string> tintArray = new List<string>();
+
         public MainPage()
         {
             this.InitializeComponent();
+
+            tintArray.Add("Black");
+            tintArray.Add("Brown");
+            tintArray.Add("Blue");
+
+            TintBox.ItemsSource = tintArray;
+
+            TintBox.SelectedIndex = 0;
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(glassHeight.Text == "" || glassWidth.Text == "" || woodHeight.Text == "" || woodWidth.Text == "")
+            {
+                //error
+            }
+            else
+            {
+                compute();
+            }
+        }
+
+        public void compute()
+        {
+            double gHeight, gWidth, wHeight, wWidth, gArea, wLength;
+
+            gHeight = double.Parse(glassHeight.Text);
+            gWidth = double.Parse(glassWidth.Text);
+            wHeight = double.Parse(woodHeight.Text);
+            wWidth = double.Parse(woodWidth.Text);
+
+            gArea = 2 * (gHeight + gWidth);
+            wLength = 2 * (wHeight + wWidth) * 3.25;
+
+            var tint = TintBox.SelectedValue;
+            var today = DateTime.Now.ToString("MM/dd/yyyy");
+
+            AreaSolution.Text = gArea.ToString();
+            LengthSolution.Text = wLength.ToString();
+            TintChoice.Text = tint.ToString();
+            Date.Text = today;
+
         }
     }
 }
