@@ -1,17 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using System.Text.RegularExpressions;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 
 namespace Glazer
@@ -38,7 +30,8 @@ namespace Glazer
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(glassHeight.Text == "" || glassWidth.Text == "" || woodHeight.Text == "" || woodWidth.Text == "")
+            if(glassHeight.Text == "" || glassWidth.Text == "" || woodHeight.Text == "" || woodWidth.Text == "" ||
+                !IsNumber(glassHeight.Text) || !IsNumber(glassWidth.Text) || !IsNumber(woodHeight.Text) || !IsNumber(woodWidth.Text))
             {
                 ErrorBlock.Text = "ERROR: Every field must have a number to calculate";
             }
@@ -78,6 +71,30 @@ namespace Glazer
             tempQuantity = slider.Value;
             QuantitySelected.Text = tempQuantity.ToString();
 
+        }
+
+
+        private bool IsNumber(string text)
+        {
+            Regex regex = new Regex(@"^[0-9]+$");
+
+            return regex.IsMatch(text);
+        }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            AreaSolution.Text = "0";
+            LengthSolution.Text = "0";
+            TintChoice.Text = "0";
+            Date.Text = "0";
+            QuantityChoice.Text = "0";
+            ErrorBlock.Text = "";
+            glassHeight.Text = "";
+            glassWidth.Text = "";
+            woodHeight.Text = "";
+            woodWidth.Text = "";
+            TintBox.SelectedIndex = 0;
+            Quantity.Value = 0;
         }
     }
 }
